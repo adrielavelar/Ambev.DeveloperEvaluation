@@ -2,7 +2,7 @@
 
 public class ExternalProduct : BaseEntity
 {
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
     public ExternalProduct(Guid id, string name)
     {
@@ -12,6 +12,6 @@ public class ExternalProduct : BaseEntity
 
     public ExternalProduct()
     {
-        
+
     }
 }

@@ -2,12 +2,12 @@
 
 public class SaleItem : BaseEntity
 {
-    public ExternalProduct Product { get; private set; }
-    public int Quantity { get; private set; }
-    public decimal UnitPrice { get; private set; }
-    public decimal Discount { get; private set; }
+    public ExternalProduct Product { get; set; }
+    public int Quantity { get; set; }
+    public decimal UnitPrice { get; set; }
+    public decimal Discount { get; set; }
     public decimal TotalAmount => (UnitPrice * Quantity) - Discount;
-    public bool IsCancelled { get; private set; }
+    public bool IsCancelled { get; set; }
 
     public SaleItem(ExternalProduct product, int quantity, decimal unitPrice, decimal discount = 0)
     {
@@ -21,7 +21,7 @@ public class SaleItem : BaseEntity
 
     public SaleItem()
     {
-        
+
     }
 
     public void Cancel()
@@ -31,4 +31,9 @@ public class SaleItem : BaseEntity
     }
 
     private void LogEvent(string eventName) => Console.WriteLine($"{eventName} - ItemId: {Id}");
+
+    public void SetDiscount(decimal value)
+    {
+        Discount = value;
+    }
 }

@@ -2,13 +2,13 @@
 
 public class Sale : BaseEntity
 {
-    public string SaleNumber { get; private set; }
-    public DateTime SaleDate { get; private set; }
-    public ExternalCustomer Customer { get; private set; }
-    public ExternalBranch Branch { get; private set; }
-    public List<SaleItem> Items { get; private set; } = new();
+    public string SaleNumber { get; set; }
+    public DateTime SaleDate { get; set; }
+    public ExternalCustomer Customer { get; set; }
+    public ExternalBranch Branch { get; set; }
+    public List<SaleItem> Items { get; set; } = new();
     public decimal TotalAmount => Items.Sum(item => item.TotalAmount);
-    public bool IsCancelled { get; private set; }
+    public bool IsCancelled { get; set; }
 
     public Sale(string saleNumber, DateTime saleDate, ExternalCustomer customer, ExternalBranch branch)
     {
@@ -22,7 +22,7 @@ public class Sale : BaseEntity
 
     public Sale()
     {
-        
+
     }
 
     public void AddItem(SaleItem item)

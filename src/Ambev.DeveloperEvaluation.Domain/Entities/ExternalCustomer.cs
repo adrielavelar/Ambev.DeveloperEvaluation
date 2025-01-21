@@ -2,7 +2,7 @@
 
 public class ExternalCustomer : BaseEntity
 {
-    public string Name { get; private set; }
+    public string Name { get; set; }
 
     public ExternalCustomer(Guid id, string name)
     {
@@ -12,6 +12,6 @@ public class ExternalCustomer : BaseEntity
 
     public ExternalCustomer()
     {
-        
+
     }
 }

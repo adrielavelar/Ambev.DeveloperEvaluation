@@ -2,7 +2,7 @@
 
 public class ExternalBranch : BaseEntity
 {
-    public string Description { get; private set; }
+    public string Description { get; set; }
 
     public ExternalBranch(Guid id, string description)
     {
@@ -12,6 +12,6 @@ public class ExternalBranch : BaseEntity
 
     public ExternalBranch()
     {
-        
+
     }
 }
